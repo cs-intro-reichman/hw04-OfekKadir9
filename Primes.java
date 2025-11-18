@@ -25,7 +25,7 @@ public class Primes {
             }
         }
         double presentage = 100.0 * count / size;
-        System.out.println ("There are " + count + " primes between 2 and " + size +". (" + (int)presentage + "% are primes)" );
+        System.out.println ("There are " + count + " primes between 2 and " + size +" (" + (int)presentage + "% are primes)" );
         
 
     }

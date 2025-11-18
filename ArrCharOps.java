@@ -105,7 +105,7 @@ public class ArrCharOps {
             return -1;
         }
         int index = arr.length -1;
-        while (index > 0) {
+        while (index >= 0) {
             if (arr[index] == ch) {
                 return index;
             }
@@ -139,7 +139,7 @@ public class ArrCharOps {
      *  characters containing the characters "urge".
      */     
     public static char[] subArray(char[] arr, int beginIndex, int endIndex) {
-        if (arr.length == 0 || endIndex > arr.length - 1 || endIndex < beginIndex) {
+        if (arr.length == 0 || endIndex > arr.length || endIndex < beginIndex) {
             return null;
         }
         char[] ret = new char[endIndex - beginIndex];
@@ -168,7 +168,7 @@ public class ArrCharOps {
             if (i == arr.length -1) {
                 hashCode = hashCode + arr[i];
             } else {
-                hashCode = hashCode + arr[0] * (long) Math.pow (7.0, arr.length - i);
+                hashCode = hashCode + arr[i] * (long) Math.pow (7.0, arr.length - i -1);
             }
         }
         
@@ -225,15 +225,24 @@ public class ArrCharOps {
             lowerIndex = str1.length();
         }
         for (int i = 0; i < lowerIndex; i++) {
-            for (int j = 0; j < lowerIndex; j++) {
-                if (string1[i] == string2[j]) {
-                    ret = 0;
-                } else if (string1[i] < string2[j]) {
-                    ret = -1;
-                } else {
-                    ret = 1;
-                }
+            if (string1[i] == string2[i]) {
+                ret = 0;
+            } else if (string1[i] < string2[i]) {
+                ret = -1;
+                break;
+            } else {
+                ret = 1;
+                break;
+                
             } 
+        }
+        if (ret == 0) {
+            if (str1.length() > str2.length()) {
+                ret = 1;
+            }
+            else if (str1.length() < str2.length()) {
+                ret = -1;
+            }
         }
 
         return ret;

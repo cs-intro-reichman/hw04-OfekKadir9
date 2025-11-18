@@ -16,6 +16,7 @@ public class Primes {
             }
             index++;
         }
+        System.out.println ("Prime numbers up to " + size + ":");
         int count = 0;
         for (int i = 0; i < numbers.length; i++) {
             if (numbers[i] == true) {

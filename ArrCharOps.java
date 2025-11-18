@@ -203,13 +203,13 @@ public class ArrCharOps {
         int ret = 0;
         for (int i = 0; i < str1.length(); i++) {
             string1[i] = str1.charAt(i);
-            if (!(string1[i] >= 65 &&  string1[i] <= 90 || string1[i] >= 97 &&  string1[i] <= 122) || string1.equals ("")){
+            if (!(string1[i] >= 65 &&  string1[i] <= 90 || string1[i] >= 97 &&  string1[i] <= 122) || str1.equals ("")){
                 return -2;
             }
         }
         for (int i = 0; i < str2.length(); i++) {
             string2[i] = str2.charAt(i);
-            if (!(string2[i] >= 65 &&  string2[i] <= 90 || string2[i] >= 97 &&  string2[i] <= 122) || string2.equals ("")){
+            if (!(string2[i] >= 65 &&  string2[i] <= 90 || string2[i] >= 97 &&  string2[i] <= 122) || str2.equals ("")){
                 return -2;
             }
         }

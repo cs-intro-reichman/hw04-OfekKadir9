@@ -43,21 +43,20 @@ public class ArrCharOps {
      *  returns true; Otherwise returns false.
      */
     public static boolean equals(char[] arr1, char[] arr2) {
-        boolean ret = false;
+        boolean ret = true;
         if (arr1 == null || arr2 == null) {
-            return ret;
+            return false;
         } 
         if (arr1.length == arr2.length) {
             for (int i = 0; i < arr1.length; i++) {
-                 if (arr1[i] == arr2[i]) {
-                    ret = true;
-                } else {
-                     ret = false;
-                     break;
+                 if (!(arr1[i] == arr2[i])) {
+                    return false;
                 }
             }
                 
-        }
+        } else {
+            return false;
+        } 
         return ret;
         
     }

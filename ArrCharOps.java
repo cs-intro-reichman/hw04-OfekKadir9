@@ -45,8 +45,8 @@ public class ArrCharOps {
     public static boolean equals(char[] arr1, char[] arr2) {
         boolean ret = false;
         if (arr1.length == arr2.length) {
-            if (arr1.length == 0) {
-                return true;
+            if (arr1 == null || arr2 == null) {
+                return ret;
             } else {
                 for (int i = 0; i < arr1.length; i++) {
                     if (arr1[i] == arr2[i]) {
@@ -203,13 +203,13 @@ public class ArrCharOps {
         int ret = 0;
         for (int i = 0; i < str1.length(); i++) {
             string1[i] = str1.charAt(i);
-            if (!(string1[i] >= 65 &&  string1[i] <= 90 || string1[i] >= 97 &&  string1[i] <= 122)){
+            if (!(string1[i] >= 65 &&  string1[i] <= 90 || string1[i] >= 97 &&  string1[i] <= 122) || string1.equals ("")){
                 return -2;
             }
         }
         for (int i = 0; i < str2.length(); i++) {
             string2[i] = str2.charAt(i);
-            if (!(string2[i] >= 65 &&  string2[i] <= 90 || string2[i] >= 97 &&  string2[i] <= 122)){
+            if (!(string2[i] >= 65 &&  string2[i] <= 90 || string2[i] >= 97 &&  string2[i] <= 122) || string2.equals ("")){
                 return -2;
             }
         }

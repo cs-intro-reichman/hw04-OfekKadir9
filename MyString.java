@@ -40,12 +40,15 @@ public class MyString {
             return true;
         }
         int indexOf1 = 0;
-        
-        for (int i = 0; i <= str1.length() - str2.length(); i++) {
+
+        for (int i = 0; i < str1.length(); i++) {
             if (str1.charAt(i) == str2.charAt(0)) {
                 indexOf1 = i;
                 int count = 0;
                 for (int j = 0; j < str2.length(); j++) {
+                    if (indexOf1 >= str1.length()) {
+                        break;
+                    }
                     if (str2.charAt(j) != str1.charAt(indexOf1)) {
                         break;
                     } else {
